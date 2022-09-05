@@ -15,6 +15,7 @@ export const AllRoutes = () => {
 					<Route path=":product_id" element={<Details />}></Route>
 				</Route>
 			</Route>
+			<Route path="/details" element={<Details />}></Route>
 		</Routes>
 	)
 }

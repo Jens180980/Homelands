@@ -9,15 +9,15 @@ import { Main } from "./Components/Partials/Main";
 function App() {
   return (
     <BrowserRouter>
-    <AuthWrapper> 
+      <AuthWrapper> 
         <Header />
         <Main>
 
             <AllRoutes />
-
+ 
         </Main>
         <Footer />
-        </AuthWrapper>
+      </AuthWrapper>
     </BrowserRouter>
   );
 }
