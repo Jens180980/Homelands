@@ -1,11 +1,16 @@
 import React from 'react'
 import { Navigation } from '../Partials/Navigation'
+import Style from '../../Assets/scss/Header.module.scss'
 
 export const Header = () => {
   return (
-    <div>
-      <h2>Logo goes here</h2>
-      <Navigation />
-    </div>
+    <header className={Style.header}>
+      <section>
+        <div className={Style.logo}>
+          <h1>Homelands</h1>
+        </div>
+        <Navigation />
+      </section>
+    </header>
   )
 }

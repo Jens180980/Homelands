@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { Home } from '../Pages/Home'
 import { List } from '../Pages/List'
-import  { Details } from '../Pages/Details'
+import  { Login } from '../Pages/Login'
+import { Details } from '../Pages/Details'
 
 
 export const AllRoutes = () => {
@@ -15,7 +16,7 @@ export const AllRoutes = () => {
 					<Route path=":product_id" element={<Details />}></Route>
 				</Route>
 			</Route>
-			<Route path="/details" element={<Details />}></Route>
+			<Route path="/login" element={<Login />}></Route>
 		</Routes>
 	)
 }
