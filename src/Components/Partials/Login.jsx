@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useContext } from "react"
-import { AuthContent } from './Authorize'
+import { AuthContent } from '../StateManagement/Authorize'
 
 export const Login = () => {
 

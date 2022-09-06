@@ -1,24 +1,25 @@
-import React from 'react'
-import axios from 'axios'
-import { useState, useEffect } from 'react';
+import { useContext } from "react"
+import { listContent } from "../StateManagement/ListData"
+
 
 export const List = () => {
 
-  const [listData, setListData] = useState([]);
+  const list = useContext(listContent)
 
-	useEffect(() => {
-		const getData = async () => {
-			const result = await axios.get(`https://api.mediehuset.net/homelands/homes`)
-
-			setListData(result.data.items)
-		}
-		getData();
-	}, [setListData])
-
-  console.log(listData)
   return (
     <>
-    <h2>Hej</h2>
+    <h2>Huse til salg</h2>
+
+    {list.listData && list.listData.map(item => {
+      console.log(item)
+      return(
+        <ul key={item.id}>
+          <li>Adresse: {item.address}</li>
+        </ul>
+      )
+    }
+    )}
+
     </>
   )
 }
