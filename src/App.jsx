@@ -10,7 +10,7 @@ import Style from './Assets/scss/App.module.scss'
 
 function App() {
   return (
-    <body className={Style.body}>
+    <section className={Style.body}>
       <BrowserRouter>
         <AuthWrapper> 
           <Header />
@@ -22,7 +22,7 @@ function App() {
           <Footer />
         </AuthWrapper>
       </BrowserRouter>
-    </body>
+    </section>
   );
 }
 
