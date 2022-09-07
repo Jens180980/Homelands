@@ -10,3 +10,12 @@
         width: 100%;
     }
 }
+
+.gallery {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 1rem;
+    margin-top: -4rem;
+}
