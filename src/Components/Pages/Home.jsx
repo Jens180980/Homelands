@@ -5,14 +5,13 @@ import Style from '../../Assets/scss/Home.module.scss'
 import { CommentWrapper } from '../StateManagement/CommentData'
 import { EmployeeWrapper } from '../StateManagement/EmployeeData'
 import { EmployeeCard } from '../Partials/EmployeeCard'
+import { Slider } from '../Partials/Slider'
 
 export const Home = () => {
   return (
       <section className={Style.home}> 
         <img src={vejle} alt="hero" className={Style.hero}></img>
-        <div>
-          <h2>Her kommer en slider</h2>
-        </div>
+        <Slider />
         <CommentWrapper>
           <Comments />
         </CommentWrapper>
