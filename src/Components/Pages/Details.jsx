@@ -28,7 +28,9 @@ export const Details = () => {
 
 
     return (
-            <section>
+      <>
+          {homeDetails ? 
+            <>
               <img src={homeDetails.images[0].filename.large} alt="house"></img>
               <section>
                 <div>
@@ -53,7 +55,10 @@ export const Details = () => {
                   
                 </figure>
               </section>
-            </section>
-    )
+            </>
+            : null }
+      </>
+        )
+    
 }
                           
