@@ -7,7 +7,6 @@ import { EmployeeWrapper } from '../StateManagement/EmployeeData'
 import { EmployeeCard } from '../Partials/EmployeeCard'
 import { HouseCard } from '../Partials/HouseCard'
 import { listContent } from '../StateManagement/ListData'
-import house from '../../Assets/img/house.png'
 
 export const Home = () => {
 
@@ -15,11 +14,14 @@ export const Home = () => {
 
   return (
       <section className={Style.home}> 
-        <img src={vejle} alt="hero" className={Style.hero}></img>
+        <div className={Style.imgWrapper}>
+          <img src={vejle} alt="hero" className={Style.hero}></img>
+        </div>
+        <div className={Style.textWrapper}>
         <div className={Style.gallery}>
           {listData && listData.slice(0, 3).map(item => {
             return (
-            < HouseCard key={item.id} id={item.id} img={house} address={item.address} zip={item.zipcode} city={item.city} type={item.type} energy={item.energy_label_name} rooms={item.num_rooms} area={item.floor_space} price={item.price} />
+            < HouseCard key={item.id} id={item.id} img={item.images[0].filename.medium} address={item.address} zip={item.zipcode} city={item.city} type={item.type} energy={item.energy_label_name} rooms={item.num_rooms} area={item.floor_space} price={item.price} />
             )
           })}
         </div>
@@ -28,7 +30,8 @@ export const Home = () => {
         </CommentWrapper>
         <EmployeeWrapper>
           <EmployeeCard />
-        </EmployeeWrapper> 
+        </EmployeeWrapper>
+        </div> 
       </section>
 
   )

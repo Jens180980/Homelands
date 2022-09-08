@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useContext } from "react"
 import { AuthContent } from '../StateManagement/Authorize'
+import Style from '../../Assets/scss/Login.module.scss'
 
 export const Login = () => {
 
@@ -26,7 +27,7 @@ export const Login = () => {
 	}
 
 	return (
-	<>
+	<section className={Style.compWrapper}>
 			{!loginData && !loginData.username ? (
 		
 			<form onSubmit={handleSubmit(Login)}>
@@ -62,7 +63,7 @@ export const Login = () => {
 					<button onClick={logOut}>Log ud</button>
 				</div>
 			)}
-            </>
+            </section>
 
 	)
 }

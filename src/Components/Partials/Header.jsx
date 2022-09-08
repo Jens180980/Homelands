@@ -1,13 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Navigation } from '../Partials/Navigation'
 import Style from '../../Assets/scss/Header.module.scss'
 
 export const Header = () => {
   return (
     <header className={Style.header}>
+      <div className={Style.empty}></div>
       <section>
         <div className={Style.logo}>
-          <h1>Homelands</h1>
+          <Link to="/" ><h1>Homelands</h1></Link>
         </div>
         <Navigation />
       </section>

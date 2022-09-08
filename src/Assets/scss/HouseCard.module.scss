@@ -7,13 +7,15 @@
 
 .figure {
     background-color: rgba(221, 221, 221, 0.5);
-    padding: 2rem !important;  
+    padding: 2rem !important; 
+    color: black;
 }
 
 .bottom {
     display: flex;
     justify-content: space-between;
     margin-top: 0.5rem;
+
 }
 
 .energy {
@@ -24,4 +26,8 @@
 
 .img {
     width: 100%;
+}
+
+a {
+    text-decoration: none;
 }

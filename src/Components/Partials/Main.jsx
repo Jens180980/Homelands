@@ -1,8 +1,7 @@
-import Style from '../../Assets/scss/Main.module.scss'
 
 export const Main = props => {
 	return (
-		<main className={Style.main}>
+		<main>
 			{props.children}
 		</main>
 	)
