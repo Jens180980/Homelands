@@ -10,11 +10,8 @@ export const AllRoutes = () => {
 		<Routes>
 			<Route index element={<Home />}></Route>
 			<Route path="/list">
-				<Route index element={<List />}></Route>
-				<Route path=":group_id">
-					<Route index element={<List />}></Route>
-					<Route path=":product_id" element={<Details />}></Route>
-				</Route>
+				<Route index element={<List/>}></Route>
+        		<Route path=":home_id" element={<Details/>}/>
 			</Route>
 			<Route path="/login" element={<Login />}></Route>
 		</Routes>

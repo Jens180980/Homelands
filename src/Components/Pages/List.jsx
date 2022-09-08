@@ -16,9 +16,8 @@ export const List = () => {
 
       <section className={Style.gallery}>
         {list.listData && list.listData.map(item => {
-          console.log(item)
           return(
-            < HouseCard key={item.id} img={house} address={item.address} zip={item.zipcode} city={item.city} type={item.type} energy={item.energy_label_name} rooms={item.num_rooms} area={item.floor_space} price={item.price} />
+            < HouseCard key={item.id} id={item.id} img={house} address={item.address} zip={item.zipcode} city={item.city} type={item.type} energy={item.energy_label_name} rooms={item.num_rooms} area={item.floor_space} price={item.price} />
           )
         }
         )}

@@ -16,6 +16,23 @@ const AuthWrapper = ({ children }) => {
 			{children}
 		</AuthContent.Provider>
 	)
+
+	
 }
 
-export { AuthContent, AuthWrapper }
+const authHeader = () => {
+
+    const Token = sessionStorage.getItem("token") ? JSON.parse(sessionStorage.getItem("token")) : null
+
+    if (Token) {
+		console.log(Token.access_token)
+      return {
+        'Access-Control-Allow-Origin': '*',
+        'Authorization': `Bearer ${Token.access_token}`,
+      }
+    } else {
+      return null
+    }
+}
+
+export { AuthContent, AuthWrapper, authHeader }

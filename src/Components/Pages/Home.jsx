@@ -12,7 +12,6 @@ import house from '../../Assets/img/house.png'
 export const Home = () => {
 
   const {listData} = useContext(listContent)
-  console.log(listData)
 
   return (
       <section className={Style.home}> 
@@ -20,7 +19,7 @@ export const Home = () => {
         <div className={Style.gallery}>
           {listData && listData.slice(0, 3).map(item => {
             return (
-            < HouseCard key={item.id} img={house} address={item.address} zip={item.zipcode} city={item.city} type={item.type} energy={item.energy_label_name} rooms={item.num_rooms} area={item.floor_space} price={item.price} />
+            < HouseCard key={item.id} id={item.id} img={house} address={item.address} zip={item.zipcode} city={item.city} type={item.type} energy={item.energy_label_name} rooms={item.num_rooms} area={item.floor_space} price={item.price} />
             )
           })}
         </div>

@@ -2,17 +2,12 @@ import Style from '../../Assets/scss/Comments.module.scss'
 import { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
-import { AuthContent } from '../StateManagement/Authorize'
+import { AuthContent, authHeader } from '../StateManagement/Authorize'
 
 export const Comments = () => {
   const { register, handleSubmit, formState: { errors }} = useForm()
   const { loginData } = useContext(AuthContent)
   const [trueFalse, setTrueFalse] = useState(false)
-  axios.defaults.headers.common = {
-    'Authorization': `bearer ${loginData.access_token}`, 
-    'Access-Control-Allow-Origin': "*",
-    'Access-Control-Allow-Headers': "Origin, X-Requested-With, Content-Type, Accept"
-  }
 
   const hideShow = () => {
     if(trueFalse) {
@@ -27,10 +22,10 @@ export const Comments = () => {
 		formData.append("title", data.title)
 		formData.append("content", data.content)
     formData.append("user_id", loginData.user_id)
-    formData.append("active", true)
+    formData.append("active", 1)
     formData.append("num_stars", loginData.user_id)
-
-		const result = await axios.post('https://api.mediehuset.net/homelands/reviews', formData)
+    setTrueFalse(false)
+		const result = await axios.post('https://api.mediehuset.net/homelands/reviews', formData, { headers: authHeader()})
     console.log(result)
   }
 
