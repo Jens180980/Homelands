@@ -1,7 +1,10 @@
-import React from 'react'
 
-export const Modal = () => {
+
+export const Modal = ({ component }) => {
   return (
-    <div>Modal</div>
+    <div>
+      <p>X</p>
+      { component }
+    </div>
   )
 }
