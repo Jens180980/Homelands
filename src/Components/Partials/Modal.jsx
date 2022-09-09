@@ -1,10 +1,19 @@
+import { useContext } from "react"
+import { ModalContent } from "../StateManagement/ModalData"
+import Style from '../../Assets/scss/Modal.module.scss'
 
 
-export const Modal = ({ component }) => {
+export const Modal = () => {
+  
+  const { ModalData, setModalData } = useContext(ModalContent)
+
+  const close = () => setModalData(false)
+
+  console.log(ModalData)
+
   return (
-    <div>
-      <p>X</p>
-      { component }
+    <div className={Style.wrapper}>
+      <p onClick={close}>X</p>
     </div>
   )
 }

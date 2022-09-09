@@ -7,6 +7,7 @@ import { Main } from "./Components/Partials/Main";
 import { ListWrapper } from "./Components/StateManagement/ListData";
 import Style from './Assets/scss/App.module.scss'
 import { SearchWrapper } from "./Components/StateManagement/SearchData";
+import { ModalWrapper } from "./Components/StateManagement/ModalData";
 
 
 function App() {
@@ -17,11 +18,11 @@ function App() {
         <SearchWrapper>
           <Header />
           <Main>
-            
+            <ModalWrapper>
             <ListWrapper>
               <AllRoutes />
             </ListWrapper>
-            
+            </ModalWrapper>
           </Main>
           <Footer />
         </SearchWrapper>

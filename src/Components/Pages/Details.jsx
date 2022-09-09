@@ -7,11 +7,21 @@ import geo from '../../Assets/img/geo.png'
 import heart from '../../Assets/img/heart.png'
 import plan from '../../Assets/img/plan.png'
 import employee from '../../Assets/img/employee.png'
-
+import { useContext } from "react";
+import { ModalContent } from "../StateManagement/ModalData";
+import { Modal } from '../Partials/Modal'
 
 export const Details = () => {
     const { home_id } = useParams(0);
-    const [homeDetails, setHomeDetails] = useState();
+    const [homeDetails, setHomeDetails] = useState()
+    const { ModalData, setModalData } = useContext(ModalContent)
+
+    console.log(ModalData)
+
+    const open = () => {
+      setModalData(true)
+      console.log(ModalData)
+    }
 
     useEffect(() => {
         const getDetails = async () => {
@@ -28,6 +38,7 @@ export const Details = () => {
 
 
     return (
+      <>
       <section className={Style.wrapper}>
           {homeDetails ? 
             <>
@@ -42,7 +53,7 @@ export const Details = () => {
                   <p>{homeDetails.type + " |" + homeDetails.floor_space + "m2 |" + homeDetails.num_rooms + " værelser"}</p>
                   <p>Set {homeDetails.num_clicks} gange</p>
                 </div>
-                <div className={Style.topmiddle}><img src={camera} alt="camera" /><img src={plan} alt="plantegning" /><img src={geo} alt="geolokation" /><img src={heart} alt="like" /></div>
+                <div className={Style.topmiddle}><img src={camera} onClick={open} alt="camera" /><img src={plan} alt="plantegning" /><img src={geo} alt="geolokation" /><img src={heart} alt="like" /></div>
                 <div className={Style.topright}>
                   <p className={Style.priceTxt}>Kontantpris <span>{homeDetails.price} DKK</span></p>
                   <p className={Style.downpay}>Udbetaling {homeDetails.payout} DKK</p>
@@ -62,13 +73,16 @@ export const Details = () => {
                     <p>Mobil: 55443322</p>
                     <p>Email: vefk@homelands.dk</p>
                   </figcaption>
-                  
                 </figure>
               </section>
               </div>
             </>
             : null }
       </section>
+      {ModalData ? (
+          <Modal />
+        ) : null}
+      </>
         )
     
 }

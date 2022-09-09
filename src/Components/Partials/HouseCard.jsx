@@ -8,9 +8,7 @@ export const HouseCard = ({id, img, address, zip, city, type, energy, rooms, are
   const house_id = id
 
   const updateClicks = async () => {
-    console.log(house_id)
     const result = await axios.patch(`https://api.mediehuset.net/homelands/homes/${house_id}`, { headers: authHeader() })
-    console.log(result)
   }
 
   return (
