@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +12,22 @@
     width: 100vw;
     height: 10vh;
 
+    .goLeft {
+        display: flex;
+        align-items: center;
+
+        input {
+            padding: 0.2rem 1rem;
+            border: none;
+        }
+
+        button {
+            background-color: white;
+            padding: 0.17rem 0;
+            border: none;
+            cursor:pointer;
+        }
+    }
 
     .empty {
         position: absolute;

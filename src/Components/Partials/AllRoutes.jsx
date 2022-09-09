@@ -3,6 +3,7 @@ import { Home } from '../Pages/Home'
 import { List } from '../Pages/List'
 import  { Login } from '../Pages/Login'
 import { Details } from '../Pages/Details'
+import { SearchResult } from '../Pages/SearchResult'
 
 
 export const AllRoutes = () => {
@@ -14,6 +15,7 @@ export const AllRoutes = () => {
         		<Route path=":home_id" element={<Details/>}/>
 			</Route>
 			<Route path="/login" element={<Login />}></Route>
+			<Route path="/search" element={<SearchResult />}></Route>
 		</Routes>
 	)
 }
